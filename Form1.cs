@@ -71,10 +71,8 @@ namespace NotePad
         private void txtBody_TextChanged(object sender, EventArgs e)
         {
             isSaved = false;
-
         }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             if (!isSaved)
             {
@@ -85,11 +83,6 @@ namespace NotePad
                 }
                 Application.Exit();
             }
-        }
-
-        private void Exit_Click(object sender, EventArgs e)
-        {
-
         }
 
     }
