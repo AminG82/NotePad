@@ -8,8 +8,7 @@ namespace NotePad
         {
             InitializeComponent();
         }
-
-        private void saToolStripMenuItem_Click(object sender, EventArgs e)
+        private void open_Click(object sender, EventArgs e)
         {
             if (!isSaved)
             {
@@ -32,7 +31,6 @@ namespace NotePad
             txtBody.Text = System.IO.File.ReadAllText(fileName);
             this.Text = fileName;
             isSaved = true;
-
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,10 +81,16 @@ namespace NotePad
                 DialogResult result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    saToolStripMenuItem_Click(null, null);
+                    saveToolStripMenuItem_Click(null, null);
                 }
                 Application.Exit();
             }
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

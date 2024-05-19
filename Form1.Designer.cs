@@ -36,7 +36,7 @@
             savebtn = new ToolStripMenuItem();
             saveAsbtn = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
-            exitToolStripMenuItem = new ToolStripMenuItem();
+            Exit = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
             cutToolStripMenuItem = new ToolStripMenuItem();
             copyToolStripMenuItem = new ToolStripMenuItem();
@@ -44,6 +44,9 @@
             toolStripMenuItem2 = new ToolStripSeparator();
             undoToolStripMenuItem = new ToolStripMenuItem();
             redoToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripSeparator();
+            selectAll = new ToolStripMenuItem();
+            Delete = new ToolStripMenuItem();
             formatToolStripMenuItem = new ToolStripMenuItem();
             backColorToolStripMenuItem = new ToolStripMenuItem();
             redToolStripMenuItem = new ToolStripMenuItem();
@@ -53,9 +56,6 @@
             fontToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
-            toolStripMenuItem3 = new ToolStripSeparator();
-            selectAll = new ToolStripMenuItem();
-            Delete = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newbtn, openbtn, savebtn, saveAsbtn, toolStripMenuItem1, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newbtn, openbtn, savebtn, saveAsbtn, toolStripMenuItem1, Exit });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "&File";
@@ -102,7 +102,7 @@
             openbtn.ShortcutKeys = Keys.Control | Keys.O;
             openbtn.Size = new Size(180, 22);
             openbtn.Text = "Open";
-            openbtn.Click += saToolStripMenuItem_Click;
+            openbtn.Click += open_Click;
             // 
             // savebtn
             // 
@@ -124,12 +124,12 @@
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(177, 6);
             // 
-            // exitToolStripMenuItem
+            // Exit
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            Exit.Name = "Exit";
+            Exit.Size = new Size(180, 22);
+            Exit.Text = "Exit";
+            Exit.Click += Exit_Click;
             // 
             // editToolStripMenuItem
             // 
@@ -141,37 +141,54 @@
             // cutToolStripMenuItem
             // 
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            cutToolStripMenuItem.Size = new Size(180, 22);
+            cutToolStripMenuItem.Size = new Size(122, 22);
             cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            copyToolStripMenuItem.Size = new Size(180, 22);
+            copyToolStripMenuItem.Size = new Size(122, 22);
             copyToolStripMenuItem.Text = "Copy";
             // 
             // pToolStripMenuItem
             // 
             pToolStripMenuItem.Name = "pToolStripMenuItem";
-            pToolStripMenuItem.Size = new Size(180, 22);
+            pToolStripMenuItem.Size = new Size(122, 22);
             pToolStripMenuItem.Text = "Paste";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(177, 6);
+            toolStripMenuItem2.Size = new Size(119, 6);
             // 
             // undoToolStripMenuItem
             // 
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            undoToolStripMenuItem.Size = new Size(180, 22);
+            undoToolStripMenuItem.Size = new Size(122, 22);
             undoToolStripMenuItem.Text = "Undo";
             // 
             // redoToolStripMenuItem
             // 
             redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            redoToolStripMenuItem.Size = new Size(180, 22);
+            redoToolStripMenuItem.Size = new Size(122, 22);
             redoToolStripMenuItem.Text = "Redo";
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(119, 6);
+            // 
+            // selectAll
+            // 
+            selectAll.Name = "selectAll";
+            selectAll.Size = new Size(122, 22);
+            selectAll.Text = "Select All";
+            // 
+            // Delete
+            // 
+            Delete.Name = "Delete";
+            Delete.Size = new Size(122, 22);
+            Delete.Text = "Delete";
             // 
             // formatToolStripMenuItem
             // 
@@ -221,23 +238,6 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // toolStripMenuItem3
-            // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(177, 6);
-            // 
-            // selectAll
-            // 
-            selectAll.Name = "selectAll";
-            selectAll.Size = new Size(180, 22);
-            selectAll.Text = "Select All";
-            // 
-            // Delete
-            // 
-            Delete.Name = "Delete";
-            Delete.Size = new Size(180, 22);
-            Delete.Text = "Delete";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -264,7 +264,7 @@
         private ToolStripMenuItem savebtn;
         private ToolStripMenuItem saveAsbtn;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem Exit;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem cutToolStripMenuItem;
         private ToolStripMenuItem copyToolStripMenuItem;
