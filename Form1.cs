@@ -85,5 +85,11 @@ namespace NotePad
                 Application.Exit();
             }
         }
+
+        private void cut_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBody.SelectedText);
+            txtBody.SelectedText = "";  // we can use null type too !
+        }
     }
 }
