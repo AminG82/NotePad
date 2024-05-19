@@ -8,6 +8,23 @@ namespace NotePad
         {
             InitializeComponent();
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            if (fileName == null)
+            {
+                saveFileDialog1.Filter = "Text Only (*.txt) | *txt";
+                saveFileDialog1.DefaultExt = "txt";
+                DialogResult result = saveFileDialog1.ShowDialog();
+                if (result == DialogResult.Cancel)
+                    return;
+                fileName = saveFileDialog1.FileName;
+            }
+            System.IO.File.WriteAllText(fileName, txtBody.Text);
+            this.Text = fileName;
+            isSaved = true;
+        }
+
         private void open_Click(object sender, EventArgs e)
         {
             if (!isSaved)
@@ -29,22 +46,6 @@ namespace NotePad
             }
             fileName = openFileDialog1.FileName;
             txtBody.Text = System.IO.File.ReadAllText(fileName);
-            this.Text = fileName;
-            isSaved = true;
-        }
-
-        private void save_Click(object sender, EventArgs e)
-        {
-            if (fileName == null)
-            {
-                saveFileDialog1.Filter = "Text Only (*.txt) | *txt";
-                saveFileDialog1.DefaultExt = "txt";
-                DialogResult result = saveFileDialog1.ShowDialog();
-                if (result == DialogResult.Cancel)
-                    return;
-                fileName = saveFileDialog1.FileName;
-            }
-            System.IO.File.WriteAllText(fileName, txtBody.Text);
             this.Text = fileName;
             isSaved = true;
         }
