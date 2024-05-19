@@ -186,12 +186,14 @@
             selectAll.Name = "selectAll";
             selectAll.Size = new Size(180, 22);
             selectAll.Text = "Select All";
+            selectAll.Click += selectAll_Click;
             // 
             // Delete
             // 
             Delete.Name = "Delete";
             Delete.Size = new Size(180, 22);
             Delete.Text = "Delete";
+            Delete.Click += Delete_Click;
             // 
             // formatToolStripMenuItem
             // 

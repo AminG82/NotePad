@@ -101,5 +101,15 @@ namespace NotePad
         {
             txtBody.SelectedText = Clipboard.GetText();
         }
+
+        private void selectAll_Click(object sender, EventArgs e)
+        {
+            txtBody.SelectAll();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            txtBody.SelectedText = "";
+        }
     }
 }
