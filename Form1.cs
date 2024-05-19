@@ -24,7 +24,7 @@ namespace NotePad
             openFileDialog1.Filter = "OnlyText (*.txt) | *.txt;*.docx";
             DialogResult openResult;
             openResult = openFileDialog1.ShowDialog();
-            if(openResult == DialogResult.Cancel)
+            if (openResult == DialogResult.Cancel)
             {
                 return;
             }
@@ -74,6 +74,19 @@ namespace NotePad
         {
             isSaved = false;
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isSaved)
+            {
+                DialogResult result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    saToolStripMenuItem_Click(null, null);
+                }
+                Application.Exit();
+            }
         }
     }
 }
