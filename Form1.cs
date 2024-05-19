@@ -91,5 +91,15 @@ namespace NotePad
             Clipboard.SetText(txtBody.SelectedText);
             txtBody.SelectedText = "";  // we can use null type too !
         }
+
+        private void copy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBody.SelectedText);
+        }
+
+        private void paste_Click(object sender, EventArgs e)
+        {
+            txtBody.SelectedText = Clipboard.GetText();
+        }
     }
 }

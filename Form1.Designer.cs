@@ -92,7 +92,7 @@
             // 
             newbtn.Name = "newbtn";
             newbtn.ShortcutKeys = Keys.Control | Keys.N;
-            newbtn.Size = new Size(180, 22);
+            newbtn.Size = new Size(146, 22);
             newbtn.Text = "New";
             newbtn.Click += newbtn_Click;
             // 
@@ -100,7 +100,7 @@
             // 
             openbtn.Name = "openbtn";
             openbtn.ShortcutKeys = Keys.Control | Keys.O;
-            openbtn.Size = new Size(180, 22);
+            openbtn.Size = new Size(146, 22);
             openbtn.Text = "Open";
             openbtn.Click += open_Click;
             // 
@@ -108,26 +108,26 @@
             // 
             savebtn.Name = "savebtn";
             savebtn.ShortcutKeys = Keys.Control | Keys.S;
-            savebtn.Size = new Size(180, 22);
+            savebtn.Size = new Size(146, 22);
             savebtn.Text = "Save";
             savebtn.Click += save_Click;
             // 
             // saveAsbtn
             // 
             saveAsbtn.Name = "saveAsbtn";
-            saveAsbtn.Size = new Size(180, 22);
+            saveAsbtn.Size = new Size(146, 22);
             saveAsbtn.Text = "Save as";
             saveAsbtn.Click += saveAsbtn_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(177, 6);
+            toolStripMenuItem1.Size = new Size(143, 6);
             // 
             // Exit
             // 
             Exit.Name = "Exit";
-            Exit.Size = new Size(180, 22);
+            Exit.Size = new Size(146, 22);
             Exit.Text = "Exit";
             Exit.Click += Exit_Click;
             // 
@@ -150,12 +150,14 @@
             copy.Name = "copy";
             copy.Size = new Size(180, 22);
             copy.Text = "Copy";
+            copy.Click += copy_Click;
             // 
             // paste
             // 
             paste.Name = "paste";
             paste.Size = new Size(180, 22);
             paste.Text = "Paste";
+            paste.Click += paste_Click;
             // 
             // toolStripMenuItem2
             // 
