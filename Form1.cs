@@ -17,7 +17,7 @@ namespace NotePad
 
                 if (result == DialogResult.Yes)
                 {
-                    saveToolStripMenuItem_Click(null, null);
+                    save_Click(null, null);
                 }
             }
             openFileDialog1.Filter = "OnlyText (*.txt) | *.txt;*.docx";
@@ -33,7 +33,7 @@ namespace NotePad
             isSaved = true;
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)
         {
             if (fileName == null)
             {
@@ -52,7 +52,7 @@ namespace NotePad
         private void saveAsbtn_Click(object sender, EventArgs e)
         {
             fileName = null;
-            saveToolStripMenuItem_Click(null, null);
+            save_Click(null, null);
         }
 
         private void newbtn_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace NotePad
             {
                 DialogResult result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                    saveToolStripMenuItem_Click(null, null);
+                    save_Click(null, null);
             }
             txtBody.Text = "";
             isSaved = true;
@@ -79,11 +79,10 @@ namespace NotePad
                 DialogResult result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    saveToolStripMenuItem_Click(null, null);
+                    save_Click(null, null);
                 }
                 Application.Exit();
             }
         }
-
     }
 }

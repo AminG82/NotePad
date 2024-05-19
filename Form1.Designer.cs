@@ -110,7 +110,7 @@
             savebtn.ShortcutKeys = Keys.Control | Keys.S;
             savebtn.Size = new Size(180, 22);
             savebtn.Text = "Save";
-            savebtn.Click += saveToolStripMenuItem_Click;
+            savebtn.Click += save_Click;
             // 
             // saveAsbtn
             // 
