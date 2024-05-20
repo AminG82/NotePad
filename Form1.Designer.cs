@@ -36,14 +36,17 @@
             savebtn = new ToolStripMenuItem();
             saveAsbtn = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
-            exitToolStripMenuItem = new ToolStripMenuItem();
+            Exit = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
-            cutToolStripMenuItem = new ToolStripMenuItem();
-            copyToolStripMenuItem = new ToolStripMenuItem();
-            pToolStripMenuItem = new ToolStripMenuItem();
+            cut = new ToolStripMenuItem();
+            copy = new ToolStripMenuItem();
+            paste = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
             undoToolStripMenuItem = new ToolStripMenuItem();
             redoToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripSeparator();
+            selectAll = new ToolStripMenuItem();
+            Delete = new ToolStripMenuItem();
             formatToolStripMenuItem = new ToolStripMenuItem();
             backColorToolStripMenuItem = new ToolStripMenuItem();
             redToolStripMenuItem = new ToolStripMenuItem();
@@ -80,7 +83,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newbtn, openbtn, savebtn, saveAsbtn, toolStripMenuItem1, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newbtn, openbtn, savebtn, saveAsbtn, toolStripMenuItem1, Exit });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "&File";
@@ -89,7 +92,7 @@
             // 
             newbtn.Name = "newbtn";
             newbtn.ShortcutKeys = Keys.Control | Keys.N;
-            newbtn.Size = new Size(180, 22);
+            newbtn.Size = new Size(146, 22);
             newbtn.Text = "New";
             newbtn.Click += newbtn_Click;
             // 
@@ -97,77 +100,100 @@
             // 
             openbtn.Name = "openbtn";
             openbtn.ShortcutKeys = Keys.Control | Keys.O;
-            openbtn.Size = new Size(180, 22);
+            openbtn.Size = new Size(146, 22);
             openbtn.Text = "Open";
-            openbtn.Click += saToolStripMenuItem_Click;
+            openbtn.Click += open_Click;
             // 
             // savebtn
             // 
             savebtn.Name = "savebtn";
             savebtn.ShortcutKeys = Keys.Control | Keys.S;
-            savebtn.Size = new Size(180, 22);
+            savebtn.Size = new Size(146, 22);
             savebtn.Text = "Save";
-            savebtn.Click += saveToolStripMenuItem_Click;
+            savebtn.Click += save_Click;
             // 
             // saveAsbtn
             // 
             saveAsbtn.Name = "saveAsbtn";
-            saveAsbtn.Size = new Size(180, 22);
+            saveAsbtn.Size = new Size(146, 22);
             saveAsbtn.Text = "Save as";
             saveAsbtn.Click += saveAsbtn_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(177, 6);
+            toolStripMenuItem1.Size = new Size(143, 6);
             // 
-            // exitToolStripMenuItem
+            // Exit
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
-            exitToolStripMenuItem.Text = "Exit";
+            Exit.Name = "Exit";
+            Exit.Size = new Size(146, 22);
+            Exit.Text = "Exit";
+            Exit.Click += Exit_Click;
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cutToolStripMenuItem, copyToolStripMenuItem, pToolStripMenuItem, toolStripMenuItem2, undoToolStripMenuItem, redoToolStripMenuItem });
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cut, copy, paste, toolStripMenuItem2, undoToolStripMenuItem, redoToolStripMenuItem, toolStripMenuItem3, selectAll, Delete });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(39, 20);
             editToolStripMenuItem.Text = "&Edit";
             // 
-            // cutToolStripMenuItem
+            // cut
             // 
-            cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            cutToolStripMenuItem.Size = new Size(103, 22);
-            cutToolStripMenuItem.Text = "Cut";
+            cut.Name = "cut";
+            cut.Size = new Size(180, 22);
+            cut.Text = "Cut";
+            cut.Click += cut_Click;
             // 
-            // copyToolStripMenuItem
+            // copy
             // 
-            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            copyToolStripMenuItem.Size = new Size(103, 22);
-            copyToolStripMenuItem.Text = "Copy";
+            copy.Name = "copy";
+            copy.Size = new Size(180, 22);
+            copy.Text = "Copy";
+            copy.Click += copy_Click;
             // 
-            // pToolStripMenuItem
+            // paste
             // 
-            pToolStripMenuItem.Name = "pToolStripMenuItem";
-            pToolStripMenuItem.Size = new Size(103, 22);
-            pToolStripMenuItem.Text = "Paste";
+            paste.Name = "paste";
+            paste.Size = new Size(180, 22);
+            paste.Text = "Paste";
+            paste.Click += paste_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(100, 6);
+            toolStripMenuItem2.Size = new Size(177, 6);
             // 
             // undoToolStripMenuItem
             // 
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            undoToolStripMenuItem.Size = new Size(103, 22);
+            undoToolStripMenuItem.Size = new Size(180, 22);
             undoToolStripMenuItem.Text = "Undo";
             // 
             // redoToolStripMenuItem
             // 
             redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            redoToolStripMenuItem.Size = new Size(103, 22);
+            redoToolStripMenuItem.Size = new Size(180, 22);
             redoToolStripMenuItem.Text = "Redo";
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(177, 6);
+            // 
+            // selectAll
+            // 
+            selectAll.Name = "selectAll";
+            selectAll.Size = new Size(180, 22);
+            selectAll.Text = "Select All";
+            selectAll.Click += selectAll_Click;
+            // 
+            // Delete
+            // 
+            Delete.Name = "Delete";
+            Delete.Size = new Size(180, 22);
+            Delete.Text = "Delete";
+            Delete.Click += Delete_Click;
             // 
             // formatToolStripMenuItem
             // 
@@ -243,11 +269,11 @@
         private ToolStripMenuItem savebtn;
         private ToolStripMenuItem saveAsbtn;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem Exit;
         private ToolStripMenuItem editToolStripMenuItem;
-        private ToolStripMenuItem cutToolStripMenuItem;
-        private ToolStripMenuItem copyToolStripMenuItem;
-        private ToolStripMenuItem pToolStripMenuItem;
+        private ToolStripMenuItem cut;
+        private ToolStripMenuItem copy;
+        private ToolStripMenuItem paste;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem undoToolStripMenuItem;
         private ToolStripMenuItem redoToolStripMenuItem;
@@ -260,5 +286,8 @@
         private ToolStripMenuItem fontToolStripMenuItem;
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
+        private ToolStripSeparator toolStripMenuItem3;
+        private ToolStripMenuItem selectAll;
+        private ToolStripMenuItem Delete;
     }
 }

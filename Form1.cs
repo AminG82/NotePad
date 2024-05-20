@@ -9,33 +9,7 @@ namespace NotePad
             InitializeComponent();
         }
 
-        private void saToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!isSaved)
-            {
-                DialogResult result;
-                result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    saveToolStripMenuItem_Click(null, null);
-                }
-            }
-            openFileDialog1.Filter = "OnlyText (*.txt) | *.txt;*.docx";
-            DialogResult openResult;
-            openResult = openFileDialog1.ShowDialog();
-            if(openResult == DialogResult.Cancel)
-            {
-                return;
-            }
-            fileName = openFileDialog1.FileName;
-            txtBody.Text = System.IO.File.ReadAllText(fileName);
-            this.Text = fileName;
-            isSaved = true;
-
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)
         {
             if (fileName == null)
             {
@@ -51,10 +25,35 @@ namespace NotePad
             isSaved = true;
         }
 
+        private void open_Click(object sender, EventArgs e)
+        {
+            if (!isSaved)
+            {
+                DialogResult result;
+                result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    save_Click(null, null);
+                }
+            }
+            openFileDialog1.Filter = "OnlyText (*.txt) | *.txt;*.docx";
+            DialogResult openResult;
+            openResult = openFileDialog1.ShowDialog();
+            if (openResult == DialogResult.Cancel)
+            {
+                return;
+            }
+            fileName = openFileDialog1.FileName;
+            txtBody.Text = System.IO.File.ReadAllText(fileName);
+            this.Text = fileName;
+            isSaved = true;
+        }
+
         private void saveAsbtn_Click(object sender, EventArgs e)
         {
             fileName = null;
-            saveToolStripMenuItem_Click(null, null);
+            save_Click(null, null);
         }
 
         private void newbtn_Click(object sender, EventArgs e)
@@ -63,7 +62,7 @@ namespace NotePad
             {
                 DialogResult result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                    saveToolStripMenuItem_Click(null, null);
+                    save_Click(null, null);
             }
             txtBody.Text = "";
             isSaved = true;
@@ -73,7 +72,44 @@ namespace NotePad
         private void txtBody_TextChanged(object sender, EventArgs e)
         {
             isSaved = false;
+        }
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            if (!isSaved)
+            {
+                DialogResult result = MessageBox.Show("You have unsaved data , do you want to save it first?", "Save", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    save_Click(null, null);
+                }
+                Application.Exit();
+            }
+        }
 
+        private void cut_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBody.SelectedText);
+            txtBody.SelectedText = "";  // we can use null type too !
+        }
+
+        private void copy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtBody.SelectedText);
+        }
+
+        private void paste_Click(object sender, EventArgs e)
+        {
+            txtBody.SelectedText = Clipboard.GetText();
+        }
+
+        private void selectAll_Click(object sender, EventArgs e)
+        {
+            txtBody.SelectAll();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            txtBody.SelectedText = "";
         }
     }
 }
