@@ -1,4 +1,6 @@
-﻿namespace NotePad
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace NotePad
 {
     public class Tools : ITools
     {
@@ -18,15 +20,18 @@
             CurrentPosition = Index;
             Index++;
         }
-
-        string ITools.Undo()
+        public string Undo()
         {
-            throw new NotImplementedException();
+            if (CurrentPosition > 0)
+                return Temp[--CurrentPosition];
+            return null;
         }
 
-        string ITools.Redo()
+        public string Redo()
         {
-            throw new NotImplementedException();
+            if (CurrentPosition < Index)
+                return Temp[++CurrentPosition];
+            return null;
         }
     }
 }
