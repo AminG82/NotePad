@@ -19,14 +19,14 @@
             Index++;
         }
 
-        public void Redo()
+        string ITools.Undo()
         {
-            
+            throw new NotImplementedException();
         }
 
-        public void Undo()
+        string ITools.Redo()
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
