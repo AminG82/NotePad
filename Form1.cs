@@ -4,6 +4,7 @@ namespace NotePad
     {
         string fileName;
         bool isSaved = true;
+        ITools tools = new Tools();
         public Form1()
         {
             InitializeComponent();
