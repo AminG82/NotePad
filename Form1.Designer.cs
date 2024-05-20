@@ -71,6 +71,7 @@
             txtBody.TabIndex = 0;
             txtBody.WordWrap = false;
             txtBody.TextChanged += txtBody_TextChanged;
+            txtBody.KeyUp += txtBody_KeyUp;
             // 
             // menuStrip1
             // 
@@ -94,7 +95,7 @@
             // 
             newbtn.Name = "newbtn";
             newbtn.ShortcutKeys = Keys.Control | Keys.N;
-            newbtn.Size = new Size(224, 26);
+            newbtn.Size = new Size(181, 26);
             newbtn.Text = "New";
             newbtn.Click += newbtn_Click;
             // 
@@ -102,7 +103,7 @@
             // 
             openbtn.Name = "openbtn";
             openbtn.ShortcutKeys = Keys.Control | Keys.O;
-            openbtn.Size = new Size(224, 26);
+            openbtn.Size = new Size(181, 26);
             openbtn.Text = "Open";
             openbtn.Click += open_Click;
             // 
@@ -110,26 +111,26 @@
             // 
             savebtn.Name = "savebtn";
             savebtn.ShortcutKeys = Keys.Control | Keys.S;
-            savebtn.Size = new Size(224, 26);
+            savebtn.Size = new Size(181, 26);
             savebtn.Text = "Save";
             savebtn.Click += save_Click;
             // 
             // saveAsbtn
             // 
             saveAsbtn.Name = "saveAsbtn";
-            saveAsbtn.Size = new Size(224, 26);
+            saveAsbtn.Size = new Size(181, 26);
             saveAsbtn.Text = "Save as";
             saveAsbtn.Click += saveAsbtn_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(221, 6);
+            toolStripMenuItem1.Size = new Size(178, 6);
             // 
             // Exit
             // 
             Exit.Name = "Exit";
-            Exit.Size = new Size(224, 26);
+            Exit.Size = new Size(181, 26);
             Exit.Text = "Exit";
             Exit.Click += Exit_Click;
             // 
@@ -171,12 +172,14 @@
             undo.Name = "undo";
             undo.Size = new Size(224, 26);
             undo.Text = "Undo";
+            undo.Click += undo_Click;
             // 
             // redo
             // 
             redo.Name = "redo";
             redo.Size = new Size(224, 26);
             redo.Text = "Redo";
+            redo.Click += redo_Click;
             // 
             // toolStripMenuItem3
             // 

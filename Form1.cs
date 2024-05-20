@@ -53,7 +53,7 @@ namespace NotePad
 
         private void saveAsbtn_Click(object sender, EventArgs e)
         {
-            fileName = null;
+            fileName = null;        // "" can be used too !
             save_Click(null, null);
         }
 
@@ -65,7 +65,7 @@ namespace NotePad
                 if (result == DialogResult.Yes)
                     save_Click(null, null);
             }
-            txtBody.Text = "";
+            txtBody.Text = "";      //null can be use too !
             isSaved = true;
             this.Text = "NotePad";
         }
@@ -111,6 +111,21 @@ namespace NotePad
         private void Delete_Click(object sender, EventArgs e)
         {
             txtBody.SelectedText = "";
+        }
+
+        private void undo_Click(object sender, EventArgs e)
+        {
+            txtBody.Text = tools.Undo();
+        }
+
+        private void redo_Click(object sender, EventArgs e)
+        {
+            txtBody.Text = tools.Redo();
+        }
+
+        private void txtBody_KeyUp(object sender, KeyEventArgs e)
+        {
+            tools.Insert(txtBody.Text);
         }
     }
 }
