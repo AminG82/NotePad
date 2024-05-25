@@ -233,26 +233,30 @@
             // redToolStripMenuItem
             // 
             redToolStripMenuItem.Name = "redToolStripMenuItem";
-            redToolStripMenuItem.Size = new Size(131, 26);
+            redToolStripMenuItem.Size = new Size(224, 26);
             redToolStripMenuItem.Text = "Red";
+            redToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // greenToolStripMenuItem
             // 
             greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            greenToolStripMenuItem.Size = new Size(131, 26);
+            greenToolStripMenuItem.Size = new Size(224, 26);
             greenToolStripMenuItem.Text = "Green";
+            greenToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // blueToolStripMenuItem
             // 
             blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            blueToolStripMenuItem.Size = new Size(131, 26);
+            blueToolStripMenuItem.Size = new Size(224, 26);
             blueToolStripMenuItem.Text = "Blue";
+            blueToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // foreColorToolStripMenuItem
             // 
             foreColorToolStripMenuItem.Name = "foreColorToolStripMenuItem";
             foreColorToolStripMenuItem.Size = new Size(224, 26);
             foreColorToolStripMenuItem.Text = "ForeColor";
+            foreColorToolStripMenuItem.Click += foreColorToolStripMenuItem_Click;
             // 
             // fontToolStripMenuItem
             // 

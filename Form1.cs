@@ -152,5 +152,16 @@ namespace NotePad
             fontDialog1.ShowDialog();
             txtBody.Font = fontDialog1.Font;
         }
+
+        private void foreColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            txtBody.ForeColor = colorDialog1.Color;
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtBody.BackColor = Color.FromName(((ToolStripMenuItem)sender).Text);
+        }
     }
 }
