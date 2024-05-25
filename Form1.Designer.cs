@@ -56,6 +56,8 @@
             fontToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
+            toolStripMenuItem4 = new ToolStripSeparator();
+            findToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -136,7 +138,7 @@
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cut, copy, paste, toolStripMenuItem2, undo, redo, toolStripMenuItem3, selectAll, Delete });
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cut, copy, paste, toolStripMenuItem2, undo, redo, toolStripMenuItem3, selectAll, Delete, toolStripMenuItem4, findToolStripMenuItem });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(49, 24);
             editToolStripMenuItem.Text = "&Edit";
@@ -248,6 +250,17 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(221, 6);
+            // 
+            // findToolStripMenuItem
+            // 
+            findToolStripMenuItem.Name = "findToolStripMenuItem";
+            findToolStripMenuItem.Size = new Size(224, 26);
+            findToolStripMenuItem.Text = "Find";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -295,5 +308,7 @@
         private ToolStripSeparator toolStripMenuItem3;
         private ToolStripMenuItem selectAll;
         private ToolStripMenuItem Delete;
+        private ToolStripSeparator toolStripMenuItem4;
+        private ToolStripMenuItem findToolStripMenuItem;
     }
 }
