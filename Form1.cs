@@ -146,5 +146,11 @@ namespace NotePad
             }
 
         }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            txtBody.Font = fontDialog1.Font;
+        }
     }
 }
