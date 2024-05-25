@@ -142,7 +142,7 @@ namespace NotePad
 
             txtBody.SelectionStart = index;
             txtBody.SelectionLength = text.Length;
-            txtBody.Focus();
+
 
         }
     }
