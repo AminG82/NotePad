@@ -48,6 +48,7 @@
             btnFind.TabIndex = 1;
             btnFind.Text = "Find";
             btnFind.UseVisualStyleBackColor = true;
+            btnFind.Click += btnFind_Click;
             // 
             // label1
             // 

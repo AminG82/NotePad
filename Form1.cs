@@ -131,8 +131,19 @@ namespace NotePad
 
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindForm find = new FindForm();
+            FindForm find = new FindForm(this);
             find.ShowDialog();
+        }
+        public void Find(string text)
+        {
+            int index = txtBody.Text.IndexOf(text, 0);
+            if (index == -1)
+                MessageBox.Show("NotFound!");
+
+            txtBody.SelectionStart = index;
+            txtBody.SelectionLength = text.Length;
+            txtBody.Focus();
+
         }
     }
 }
