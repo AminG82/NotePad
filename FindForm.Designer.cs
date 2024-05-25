@@ -31,6 +31,10 @@
             txtFind = new TextBox();
             btnFind = new Button();
             label1 = new Label();
+            label2 = new Label();
+            txtReplace = new TextBox();
+            btnReplace = new Button();
+            btnFindNext = new Button();
             SuspendLayout();
             // 
             // txtFind
@@ -59,11 +63,49 @@
             label1.TabIndex = 2;
             label1.Text = "Find";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 88);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Replace";
+            // 
+            // txtReplace
+            // 
+            txtReplace.Location = new Point(87, 85);
+            txtReplace.Name = "txtReplace";
+            txtReplace.Size = new Size(291, 27);
+            txtReplace.TabIndex = 4;
+            // 
+            // btnReplace
+            // 
+            btnReplace.Location = new Point(394, 83);
+            btnReplace.Name = "btnReplace";
+            btnReplace.Size = new Size(94, 29);
+            btnReplace.TabIndex = 5;
+            btnReplace.Text = "Replace";
+            btnReplace.UseVisualStyleBackColor = true;
+            // 
+            // btnFindNext
+            // 
+            btnFindNext.Location = new Point(394, 143);
+            btnFindNext.Name = "btnFindNext";
+            btnFindNext.Size = new Size(94, 29);
+            btnFindNext.TabIndex = 6;
+            btnFindNext.Text = "Find Next";
+            btnFindNext.UseVisualStyleBackColor = true;
+            // 
             // FindForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 104);
+            ClientSize = new Size(500, 184);
+            Controls.Add(btnFindNext);
+            Controls.Add(btnReplace);
+            Controls.Add(txtReplace);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnFind);
             Controls.Add(txtFind);
@@ -78,5 +120,9 @@
         private TextBox txtFind;
         private Button btnFind;
         private Label label1;
+        private Label label2;
+        private TextBox txtReplace;
+        private Button btnReplace;
+        private Button btnFindNext;
     }
 }
