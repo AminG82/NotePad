@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic.ApplicationServices;
+
 namespace NotePad
 {
     public partial class Form1 : Form
@@ -166,7 +168,17 @@ namespace NotePad
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.IO.File.WriteAllText(@"c:\Desktop\Config.txt", txtBody.BackColor.Name);
+            System.IO.File.WriteAllText(@"C:\AminG82\Config.txt", txtBody.BackColor.Name);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            if (System.IO.File.Exists(@"C:\AminG82\Config.txt"))
+            {
+                string color = System.IO.File.ReadAllText(@"C:\AminG82\Config.txt");
+                txtBody.BackColor = Color.FromName(color);
+            }
         }
     }
 }
