@@ -21,7 +21,7 @@ namespace NotePad
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            Form1.Find(txtFind.Text);
+            Form1.Find(txtFind.Text.ToLower());
             this.Close();
         }
     }

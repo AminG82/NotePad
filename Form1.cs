@@ -136,13 +136,14 @@ namespace NotePad
         }
         public void Find(string text)
         {
-            int index = txtBody.Text.IndexOf(text, 0);
+            int index = txtBody.Text.ToLower().IndexOf(text, 0);
             if (index == -1)
                 MessageBox.Show("NotFound!");
-
-            txtBody.SelectionStart = index;
-            txtBody.SelectionLength = text.Length;
-
+            else
+            {
+                txtBody.SelectionStart = index;
+                txtBody.SelectionLength = text.Length;
+            }
 
         }
     }
