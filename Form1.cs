@@ -5,6 +5,7 @@ namespace NotePad
         string fileName;
         bool isSaved = true;
         ITools tools = new Tools();
+
         public Form1()
         {
             InitializeComponent();
@@ -126,6 +127,12 @@ namespace NotePad
         private void txtBody_KeyUp(object sender, KeyEventArgs e)
         {
             tools.Insert(txtBody.Text);
+        }
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindForm find = new FindForm();
+            find.ShowDialog();
         }
     }
 }

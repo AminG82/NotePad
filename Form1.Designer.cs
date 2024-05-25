@@ -260,6 +260,7 @@
             findToolStripMenuItem.Name = "findToolStripMenuItem";
             findToolStripMenuItem.Size = new Size(224, 26);
             findToolStripMenuItem.Text = "Find";
+            findToolStripMenuItem.Click += findToolStripMenuItem_Click;
             // 
             // Form1
             // 
