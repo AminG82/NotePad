@@ -163,5 +163,10 @@ namespace NotePad
         {
             txtBody.BackColor = Color.FromName(((ToolStripMenuItem)sender).Text);
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.IO.File.WriteAllText(@"c:\Desktop\Config.txt", txtBody.BackColor.Name);
+        }
     }
 }
