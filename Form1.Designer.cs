@@ -47,6 +47,8 @@
             toolStripMenuItem3 = new ToolStripSeparator();
             selectAll = new ToolStripMenuItem();
             Delete = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripSeparator();
+            findToolStripMenuItem = new ToolStripMenuItem();
             formatToolStripMenuItem = new ToolStripMenuItem();
             backColorToolStripMenuItem = new ToolStripMenuItem();
             redToolStripMenuItem = new ToolStripMenuItem();
@@ -56,8 +58,8 @@
             fontToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
-            toolStripMenuItem4 = new ToolStripSeparator();
-            findToolStripMenuItem = new ToolStripMenuItem();
+            fontDialog1 = new FontDialog();
+            colorDialog1 = new ColorDialog();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -146,61 +148,73 @@
             // cut
             // 
             cut.Name = "cut";
-            cut.Size = new Size(224, 26);
+            cut.Size = new Size(154, 26);
             cut.Text = "Cut";
             cut.Click += cut_Click;
             // 
             // copy
             // 
             copy.Name = "copy";
-            copy.Size = new Size(224, 26);
+            copy.Size = new Size(154, 26);
             copy.Text = "Copy";
             copy.Click += copy_Click;
             // 
             // paste
             // 
             paste.Name = "paste";
-            paste.Size = new Size(224, 26);
+            paste.Size = new Size(154, 26);
             paste.Text = "Paste";
             paste.Click += paste_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(221, 6);
+            toolStripMenuItem2.Size = new Size(151, 6);
             // 
             // undo
             // 
             undo.Name = "undo";
-            undo.Size = new Size(224, 26);
+            undo.Size = new Size(154, 26);
             undo.Text = "Undo";
             undo.Click += undo_Click;
             // 
             // redo
             // 
             redo.Name = "redo";
-            redo.Size = new Size(224, 26);
+            redo.Size = new Size(154, 26);
             redo.Text = "Redo";
             redo.Click += redo_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(221, 6);
+            toolStripMenuItem3.Size = new Size(151, 6);
             // 
             // selectAll
             // 
             selectAll.Name = "selectAll";
-            selectAll.Size = new Size(224, 26);
+            selectAll.Size = new Size(154, 26);
             selectAll.Text = "Select All";
             selectAll.Click += selectAll_Click;
             // 
             // Delete
             // 
             Delete.Name = "Delete";
-            Delete.Size = new Size(224, 26);
+            Delete.Size = new Size(154, 26);
             Delete.Text = "Delete";
             Delete.Click += Delete_Click;
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(151, 6);
+            // 
+            // findToolStripMenuItem
+            // 
+            findToolStripMenuItem.Name = "findToolStripMenuItem";
+            findToolStripMenuItem.Size = new Size(154, 26);
+            findToolStripMenuItem.Text = "Find";
+            findToolStripMenuItem.Click += findToolStripMenuItem_Click;
             // 
             // formatToolStripMenuItem
             // 
@@ -221,46 +235,39 @@
             redToolStripMenuItem.Name = "redToolStripMenuItem";
             redToolStripMenuItem.Size = new Size(131, 26);
             redToolStripMenuItem.Text = "Red";
+            redToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // greenToolStripMenuItem
             // 
             greenToolStripMenuItem.Name = "greenToolStripMenuItem";
             greenToolStripMenuItem.Size = new Size(131, 26);
             greenToolStripMenuItem.Text = "Green";
+            greenToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // blueToolStripMenuItem
             // 
             blueToolStripMenuItem.Name = "blueToolStripMenuItem";
             blueToolStripMenuItem.Size = new Size(131, 26);
             blueToolStripMenuItem.Text = "Blue";
+            blueToolStripMenuItem.Click += redToolStripMenuItem_Click;
             // 
             // foreColorToolStripMenuItem
             // 
             foreColorToolStripMenuItem.Name = "foreColorToolStripMenuItem";
             foreColorToolStripMenuItem.Size = new Size(159, 26);
             foreColorToolStripMenuItem.Text = "ForeColor";
+            foreColorToolStripMenuItem.Click += foreColorToolStripMenuItem_Click;
             // 
             // fontToolStripMenuItem
             // 
             fontToolStripMenuItem.Name = "fontToolStripMenuItem";
             fontToolStripMenuItem.Size = new Size(159, 26);
             fontToolStripMenuItem.Text = "Font";
+            fontToolStripMenuItem.Click += fontToolStripMenuItem_Click;
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // toolStripMenuItem4
-            // 
-            toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(221, 6);
-            // 
-            // findToolStripMenuItem
-            // 
-            findToolStripMenuItem.Name = "findToolStripMenuItem";
-            findToolStripMenuItem.Size = new Size(224, 26);
-            findToolStripMenuItem.Text = "Find";
-            findToolStripMenuItem.Click += findToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -273,6 +280,8 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "NotePad";
+            FormClosing += Form1_FormClosing;
+            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -311,5 +320,7 @@
         private ToolStripMenuItem Delete;
         private ToolStripSeparator toolStripMenuItem4;
         private ToolStripMenuItem findToolStripMenuItem;
+        private FontDialog fontDialog1;
+        private ColorDialog colorDialog1;
     }
 }
