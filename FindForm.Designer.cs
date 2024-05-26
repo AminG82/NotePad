@@ -39,16 +39,18 @@
             // 
             // txtFind
             // 
-            txtFind.Location = new Point(87, 34);
+            txtFind.Location = new Point(76, 26);
+            txtFind.Margin = new Padding(3, 2, 3, 2);
             txtFind.Name = "txtFind";
-            txtFind.Size = new Size(291, 27);
+            txtFind.Size = new Size(255, 23);
             txtFind.TabIndex = 0;
             // 
             // btnFind
             // 
-            btnFind.Location = new Point(394, 34);
+            btnFind.Location = new Point(345, 26);
+            btnFind.Margin = new Padding(3, 2, 3, 2);
             btnFind.Name = "btnFind";
-            btnFind.Size = new Size(94, 29);
+            btnFind.Size = new Size(82, 22);
             btnFind.TabIndex = 1;
             btnFind.Text = "Find";
             btnFind.UseVisualStyleBackColor = true;
@@ -57,51 +59,54 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(28, 37);
+            label1.Location = new Point(24, 28);
             label1.Name = "label1";
-            label1.Size = new Size(37, 20);
+            label1.Size = new Size(30, 15);
             label1.TabIndex = 2;
             label1.Text = "Find";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 88);
+            label2.Location = new Point(10, 66);
             label2.Name = "label2";
-            label2.Size = new Size(62, 20);
+            label2.Size = new Size(48, 15);
             label2.TabIndex = 3;
             label2.Text = "Replace";
             // 
             // txtReplace
             // 
-            txtReplace.Location = new Point(87, 85);
+            txtReplace.Location = new Point(76, 64);
+            txtReplace.Margin = new Padding(3, 2, 3, 2);
             txtReplace.Name = "txtReplace";
-            txtReplace.Size = new Size(291, 27);
+            txtReplace.Size = new Size(255, 23);
             txtReplace.TabIndex = 4;
             // 
             // btnReplace
             // 
-            btnReplace.Location = new Point(394, 83);
+            btnReplace.Location = new Point(344, 105);
+            btnReplace.Margin = new Padding(3, 2, 3, 2);
             btnReplace.Name = "btnReplace";
-            btnReplace.Size = new Size(94, 29);
+            btnReplace.Size = new Size(82, 22);
             btnReplace.TabIndex = 5;
             btnReplace.Text = "Replace";
             btnReplace.UseVisualStyleBackColor = true;
             // 
             // btnFindNext
             // 
-            btnFindNext.Location = new Point(394, 143);
+            btnFindNext.Location = new Point(344, 66);
+            btnFindNext.Margin = new Padding(3, 2, 3, 2);
             btnFindNext.Name = "btnFindNext";
-            btnFindNext.Size = new Size(94, 29);
+            btnFindNext.Size = new Size(82, 22);
             btnFindNext.TabIndex = 6;
             btnFindNext.Text = "Find Next";
             btnFindNext.UseVisualStyleBackColor = true;
             // 
             // FindForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 184);
+            ClientSize = new Size(438, 138);
             Controls.Add(btnFindNext);
             Controls.Add(btnReplace);
             Controls.Add(txtReplace);
@@ -109,6 +114,7 @@
             Controls.Add(label1);
             Controls.Add(btnFind);
             Controls.Add(txtFind);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FindForm";
             Text = "FindForm";
             ResumeLayout(false);
