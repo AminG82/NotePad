@@ -144,7 +144,11 @@ namespace NotePad
                 txtBody.SelectionStart = index;
                 txtBody.SelectionLength = text.Length;
             }
-
+        }
+        public void Replace(string replace)
+        {
+            txtBody.SelectedText = replace;
+            txtBody.SelectionLength = replace.Length;
         }
     }
 }

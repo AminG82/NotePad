@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace NotePad
+﻿namespace NotePad
 {
     public class Tools : ITools
     {
@@ -33,5 +31,6 @@ namespace NotePad
                 return Temp[++CurrentPosition];
             return null;
         }
+
     }
 }

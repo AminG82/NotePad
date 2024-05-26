@@ -91,6 +91,7 @@
             btnReplace.TabIndex = 5;
             btnReplace.Text = "Replace";
             btnReplace.UseVisualStyleBackColor = true;
+            btnReplace.Click += btnReplace_Click;
             // 
             // btnFindNext
             // 
