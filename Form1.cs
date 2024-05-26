@@ -132,7 +132,7 @@ namespace NotePad
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FindForm find = new FindForm(this);
-            find.ShowDialog();
+            find.Show();
         }
         public void Find(string text)
         {

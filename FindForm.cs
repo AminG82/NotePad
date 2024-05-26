@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace NotePad
+﻿namespace NotePad
 {
     public partial class FindForm : Form
     {
@@ -21,8 +11,8 @@ namespace NotePad
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            Form1.Find(txtFind.Text.ToLower());
-            this.Close();
+            Form1.Find(txtFind.Text);
+            Form1.Focus();
         }
     }
 }
