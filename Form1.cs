@@ -5,7 +5,7 @@ namespace NotePad
         string fileName;
         bool isSaved = true;
         ITools tools = new Tools();
-
+        int selectionStart = 0;
         public Form1()
         {
             InitializeComponent();
@@ -145,10 +145,30 @@ namespace NotePad
                 txtBody.SelectionLength = text.Length;
             }
         }
-        public void Replace(string text , string replace)
+
+        public void Find(string text, int searchStart)
         {
-            Find(text);         
+
+            searchStart = selectionStart;
+            int index = txtBody.Text.ToLower().IndexOf(text, searchStart);
+            if (index == -1)
+                MessageBox.Show("NotFound!");
+            else
+            {
+                txtBody.SelectionStart = index;
+                txtBody.SelectionLength = text.Length;
+            }
+        }
+
+        public void Replace(string text, string replace)
+        {
+            Find(text);
             txtBody.SelectedText = replace;
+        }
+
+        private void txtBody_MouseDown(object sender, MouseEventArgs e)
+        {
+            selectionStart = txtBody.SelectionStart;
         }
     }
 }

@@ -1,8 +1,11 @@
-﻿namespace NotePad
+﻿using System.Configuration;
+
+namespace NotePad
 {
     public partial class FindForm : Form
     {
         Form1 Form1;
+        
         public FindForm(Form1 form)
         {
             Form1 = form;
@@ -30,7 +33,7 @@
 
         private void btnFindNext_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
