@@ -19,13 +19,18 @@
         {
             if (txtReplace.Text.Length > 0)
             {
-                Form1.Find(txtFind.Text , txtReplace.Text);
+                Form1.Replace(txtFind.Text, txtReplace.Text);
                 Form1.Focus();
             }
             else
             {
                 MessageBox.Show("please Enter a valid Data to Replace!");
             }
+        }
+
+        private void btnFindNext_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

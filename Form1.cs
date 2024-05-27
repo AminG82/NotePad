@@ -145,7 +145,7 @@ namespace NotePad
                 txtBody.SelectionLength = text.Length;
             }
         }
-        public void Find(string text , string replace)
+        public void Replace(string text , string replace)
         {
             Find(text);         
             txtBody.SelectedText = replace;
