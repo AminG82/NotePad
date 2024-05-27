@@ -19,7 +19,7 @@
         {
             if (txtReplace.Text.Length > 0)
             {
-                Form1.Replace(txtReplace.Text);
+                Form1.Find(txtFind.Text , txtReplace.Text);
                 Form1.Focus();
             }
             else

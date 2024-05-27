@@ -145,10 +145,10 @@ namespace NotePad
                 txtBody.SelectionLength = text.Length;
             }
         }
-        public void Replace(string replace)
+        public void Find(string text , string replace)
         {
+            Find(text);         
             txtBody.SelectedText = replace;
-            txtBody.SelectionLength = replace.Length;
         }
     }
 }
