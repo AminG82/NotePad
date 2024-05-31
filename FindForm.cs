@@ -5,10 +5,12 @@ namespace NotePad
     public partial class FindForm : Form
     {
         Form1 Form1;
+        TextBox txtText;
         
-        public FindForm(Form1 form)
+        public FindForm(Form1 form , TextBox text)
         {
             Form1 = form;
+            txtText = text;
             InitializeComponent();
         }
 
