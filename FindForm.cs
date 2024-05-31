@@ -11,6 +11,7 @@ namespace NotePad
         {
             Form1 = form;
             txtText = text;
+            txtText.SelectionStart = 0;
             InitializeComponent();
         }
 
@@ -37,7 +38,7 @@ namespace NotePad
         {
             if (txtFind.Text.Length > 0)
             {
-                Form1.Find(txtFind.Text.ToLower() , txtText.SelectionStart++);
+                Form1.Find(txtFind.Text.ToLower() , ++txtText.SelectionStart);
                 Form1.Focus();
             }
             else
