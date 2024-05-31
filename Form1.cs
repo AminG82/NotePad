@@ -5,7 +5,7 @@ namespace NotePad
         string fileName;
         bool isSaved = true;
         ITools tools = new Tools();
-        //int selectionStart = 0;
+        int selectionStart = 0;
         public Form1()
         {
             InitializeComponent();
@@ -131,7 +131,7 @@ namespace NotePad
 
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindForm find = new FindForm(this , this.txtBody);
+            FindForm find = new FindForm(this , txtBody);
             find.Show();
         }
         public void Find(string text)
@@ -148,7 +148,7 @@ namespace NotePad
 
         public void Find(string text, int searchStart)
         {
-            searchStart = txtBody.SelectionStart;
+            searchStart = selectionStart;
             int index = txtBody.Text.IndexOf(text, searchStart);
             if (index == -1)
                 MessageBox.Show("NotFound!");
@@ -167,7 +167,7 @@ namespace NotePad
 
         private void txtBody_MouseDown(object sender, MouseEventArgs e)
         {
-            //selectionStart = txtBody.SelectionStart;
+            selectionStart = txtBody.SelectionStart;
         }
     }
 }

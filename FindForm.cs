@@ -16,7 +16,7 @@ namespace NotePad
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            Form1.Find(txtFind.Text);
+            Form1.Find(txtFind.Text.ToLower());
             Form1.Focus();
         }
 
@@ -24,7 +24,7 @@ namespace NotePad
         {
             if (txtReplace.Text.Length > 0)
             {
-                Form1.Replace(txtFind.Text, txtReplace.Text);
+                Form1.Replace(txtFind.Text.ToLower(), txtReplace.Text);
                 Form1.Focus();
             }
             else
@@ -37,7 +37,7 @@ namespace NotePad
         {
             if (txtFind.Text.Length > 0)
             {
-                Form1.Find(txtFind.Text , ++txtText.SelectionStart);
+                Form1.Find(txtFind.Text.ToLower() , txtText.SelectionStart++);
                 Form1.Focus();
             }
             else
