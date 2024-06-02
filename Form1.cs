@@ -2,7 +2,7 @@ namespace NotePad
 {
     public partial class Form1 : Form
     {
-        string fileName;
+        string? fileName;
         bool isSaved = true;
         ITools tools = new Tools();
         //int selectionStart = 0;
@@ -36,7 +36,7 @@ namespace NotePad
 
                 if (result == DialogResult.Yes)
                 {
-                    save_Click(null, null);
+                    save_Click( null,null );
                 }
             }
             openFileDialog1.Filter = "OnlyText (*.txt) | *.txt;*.docx";

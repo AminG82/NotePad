@@ -22,14 +22,14 @@
         {
             if (CurrentPosition > 0)
                 return Temp[--CurrentPosition];
-            return null;
+            return ""; //null can be used too!
         }
 
         public string Redo()
         {
             if (CurrentPosition < Index)
                 return Temp[++CurrentPosition];
-            return null;
+            return "";
         }
 
     }
