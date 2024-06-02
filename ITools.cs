@@ -5,6 +5,5 @@
         void Insert(string str);
         string Undo();
         string Redo();
-
     }
 }

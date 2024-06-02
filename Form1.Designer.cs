@@ -58,8 +58,6 @@
             fontToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
-            fontDialog1 = new FontDialog();
-            colorDialog1 = new ColorDialog();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,6 +74,7 @@
             txtBody.WordWrap = false;
             txtBody.TextChanged += txtBody_TextChanged;
             txtBody.KeyUp += txtBody_KeyUp;
+            txtBody.MouseDown += txtBody_MouseDown;
             // 
             // menuStrip1
             // 

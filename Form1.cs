@@ -4,10 +4,10 @@ namespace NotePad
 {
     public partial class Form1 : Form
     {
-        string fileName;
+        string? fileName;
         bool isSaved = true;
         ITools tools = new Tools();
-
+        //int selectionStart = 0;
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace NotePad
 
                 if (result == DialogResult.Yes)
                 {
-                    save_Click(null, null);
+                    save_Click( null,null );
                 }
             }
             openFileDialog1.Filter = "OnlyText (*.txt) | *.txt;*.docx";
@@ -133,12 +133,12 @@ namespace NotePad
 
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindForm find = new FindForm(this);
-            find.ShowDialog();
+            FindForm find = new FindForm(this , txtBody);
+            find.Show();
         }
         public void Find(string text)
         {
-            int index = txtBody.Text.ToLower().IndexOf(text, 0);
+            int index = txtBody.Text.IndexOf(text, 0);
             if (index == -1)
                 MessageBox.Show("NotFound!");
             else
@@ -146,7 +146,30 @@ namespace NotePad
                 txtBody.SelectionStart = index;
                 txtBody.SelectionLength = text.Length;
             }
+        }
 
+        public void Find(string text, int searchStart)
+        {
+            searchStart = txtBody.SelectionStart;
+            int index = txtBody.Text.IndexOf(text, searchStart);
+            if (index == -1)
+                MessageBox.Show("NotFound!");
+            else
+            {
+                txtBody.SelectionStart = index;
+                txtBody.SelectionLength = text.Length;
+            }
+        }
+
+        public void Replace(string text, string replace)
+        {
+            Find(text.ToLower());
+            txtBody.SelectedText = replace;
+        }
+
+        private void txtBody_MouseDown(object sender, MouseEventArgs e)
+        {
+            //selectionStart = txtBody.SelectionStart;
         }
 
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)

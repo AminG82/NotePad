@@ -1,28 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Configuration;
 
 namespace NotePad
 {
     public partial class FindForm : Form
     {
         Form1 Form1;
-        public FindForm(Form1 form)
+        TextBox txtText;
+
+        public FindForm(Form1 form, TextBox text)
         {
             Form1 = form;
+            txtText = text;
+            txtText.SelectionStart = 0;
             InitializeComponent();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
             Form1.Find(txtFind.Text.ToLower());
-            this.Close();
+            Form1.Focus();
+        }
+
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            if (txtReplace.Text.Length > 0)
+            {
+                Form1.Replace(txtFind.Text.ToLower(), txtReplace.Text);
+                Form1.Focus();
+            }
+            else
+            {
+                MessageBox.Show("please Enter a valid Data to Replace!");
+            }
+        }
+
+        private void btnFindNext_Click(object sender, EventArgs e)
+        {
+            if (txtFind.Text.Length > 0)
+            {
+                Form1.Find(txtFind.Text.ToLower() , ++txtText.SelectionStart);
+                Form1.Focus();
+            }
+            else
+            {
+                MessageBox.Show("please Enter a valid Data to Find!");
+            }
+
         }
     }
 }
